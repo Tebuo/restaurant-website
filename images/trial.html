@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organic & Healthy</title>
+    <link rel="stylesheet" href="style.css">
+       <style>
+
+.drink-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.drink-container h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.drink-tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.tab {
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+.tab:hover {
+    background: #219150;
+}
+
+.tab.active {
+    background: #2ecc71;
+}
+
+.drink-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.drink-card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    text-align: center;
+    padding: 15px;
+    width: 220px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.drink-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.drink-card h3 {
+    font-size: 1.2rem;
+    margin: 12px 0 6px;
+    color: #2c3e50;
+}
+
+.drink-card p {
+    color: #27ae60;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.drink-card:hover {
+    transform: translateY(-6px);
+}
+
+.drink-card:hover img {
+    transform: scale(1.05);
+}
+
+.hidden {
+    opacity: 0;
+    transform: scale(0.9);
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .drink-card {
+        width: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .drink-card {
+        width: 100%;
+    }
+}
+
+
+       </style>
+</head>
+<body>
+    <nav>
+  <div class="nav-bar">
+    <div class="logo"><h2>Organic</h2></div>
+
+    <!-- Mobile toggle button (checkbox) -->
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon">&#9776;</label>
+
+    <div class="navigation">
+      <ul>
+        <li><a href="resturant.html">HOME</a></li>
+        <li><a href="menu.html">MENU</a></li>
+        <li><a href="#">LOCATION</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="drink-container">
+    <h1>DRINKS</h1>
+
+    <!-- Category Tabs -->
+    <div class="drink-tabs">
+        <button class="tab active" data-category="all">All</button>
+        <button class="tab" data-category="alcoholic">Alcoholic</button>
+        <button class="tab" data-category="hot">Hot Drinks</button>
+        <button class="tab" data-category="cold">Cold Drinks</button>
+        <button class="tab" data-category="soft">Soft Drinks</button>
+    </div>
+
+    <!-- Drinks Grid -->
+    <div class="drink-grid">
+        <div class="drink-card" data-category="alcoholic">
+            <img src="drinks/beer.jpg" alt="Beer">
+            <h3>Beer</h3>
+            <p>$4.99</p>
+        </div>
+        <div class="drink-card" data-category="alcoholic">
+            <img src="drinks/Cocktails.jpg" alt="Cocktails">
+            <h3>Cocktails</h3>
+            <p>$5.49</p>
+        </div>
+        <div class="drink-card" data-category="hot">
+            <img src="drinks/coffee.jpg" alt="Coffee">
+            <h3>Coffee</h3>
+            <p>$5.99</p>
+        </div>
+        <div class="drink-card" data-category="alcoholic">
+            <img src="drinks/hard-soda.jpg" alt="Hard Soda">
+            <h3>Hard Soda</h3>
+            <p>$4.99</p>
+        </div>
+        <div class="drink-card" data-category="hot">
+            <img src="drinks/hot-chocolate.jpg" alt="Hot Chocolate">
+            <h3>Hot Chocolate</h3>
+            <p>$3.99</p>
+        </div>
+        <div class="drink-card" data-category="hot">
+            <img src="drinks/lemon-tea.jpg" alt="Lemon Tea">
+            <h3>Lemon Tea</h3>
+            <p>$2.49</p>
+        </div>
+        <div class="drink-card" data-category="cold">
+            <img src="drinks/milkshakes.jpg" alt="Milkshakes">
+            <h3>Milkshakes</h3>
+            <p>$4.09</p>
+        </div>
+        <div class="drink-card" data-category="alcoholic">
+            <img src="drinks/mixed-drinks.jpg" alt="Mixed Drinks">
+            <h3>Mixed Drinks</h3>
+            <p>$3.99</p>
+        </div>
+        <div class="drink-card" data-category="soft">
+            <img src="drinks/mineral-water.jpg" alt="Mineral Water">
+            <h3>Mineral Water</h3>
+            <p>$3.45</p>
+        </div>
+        <div class="drink-card" data-category="cold">
+            <img src="drinks/oranges-juice.jpg" alt="Orange Juice">
+            <h3>Orange Juice</h3>
+            <p>$4.49</p>
+        </div>
+        <div class="drink-card" data-category="soft">
+            <img src="drinks/soft-drinks.jpg" alt="Soft Drinks">
+            <h3>Soft Drinks</h3>
+            <p>$5.99</p>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- HOME SECTION -->
+    <div class="home-container">
+        <div class="parapraph">
+            <p>Serving Drinks and Delicious Food</p>
+            <a href="menu.html"><button>Check Out Menu</button></a>
+        </div>
+        <div class="image">
+            <img src="images/dish.jpg" alt="Delicious Dish">
+        </div>
+    </div>
+
+    <!-- DRINKS SECTION -->
+    <div class="drink-container">
+        <h1>DRINKS</h1>
+        <div class="drink-grid">
+            <div class="drink-card">
+                <img src="drinks/beer.jpg" alt="A beer">
+                <h3>Beer</h3>
+                <p>$4.99</p>
+            </div>
+            <div class="drink-card">
+                <img src="drinks/Cocktails.jpg" alt="Cocktails">
+                <h3>Cocktails</h3>
+                <p>$5.49</p>
+            </div>
+            <div class="drink-card">
+                <img src="drinks/coffee.jpg" alt="Coffee">
+                <h3>Coffee</h3>
+                <p>$5.99</p>
+            </div>
+
+            <div class="drink-card">
+                <img src="drinks/hard-soda.jpg" alt="Hard Soda">
+                <h3>Hard Soda</h3>
+                <p>$4.99</p>
+            </div>
+        </div>
+
+        <div class="drink-grid">
+            <div class="drink-card">
+                <img src="drinks/hot-chocolate.jpg" alt="Hot Chocolate">
+                <h3>Hot Chocolate</h3>
+                <p>$3.99</p>
+            </div>
+            <div class="drink-card">
+                <img src="drinks/lemon-tea.jpg" alt="Lemon Tea">
+                <h3>Lemon Tea</h3>
+                <p>$2.49</p>
+            </div>
+            <div class="drink-card">
+                <img src="drinks/milkshakes.jpg" alt="Milkshakes">
+                <h3>MilkShakes</h3>
+                <p>$4.09</p>
+            </div>
+
+            <div class="drink-card">
+                <img src="drinks/mixed-drinks.jpg" alt="Mixed Drinks">
+                <h3>Mixed Drinks</h3>
+                <p>$3.99</p>
+            </div>
+        </div>
+
+        <div class="drink-grid">
+            <div class="drink-card">
+                <img src="drinks/mineral-water.jpg" alt="Mineral Water">
+                <h3>Mineral Water</h3>
+                <p>$3.45</p>
+            </div>
+            <div class="drink-card">
+                <img src="drinks/oranges-juice.jpg" alt="Orange Juice">
+                <h3>Orange Juice</h3>
+                <p>$4.49</p>
+            </div>
+            <div class="drink-card">
+                <img src="drinks/soft-drinks.jpg" alt="Soft Drinks">
+                <h3>Soft Drinks</h3>
+                <p>$5.99</p>
+            </div>
+
+            <div class="drink-card">
+                <img src="drinks/mixed-drinks.jpg" alt="Mixed Drinks">
+                <h3>Mixed Drinks</h3>
+                <p>$3.99</p>
+            </div>
+        </div>
+    </div>
+
+
+<div class="meal-container">
+  <div class="image-meal">
+    <h1>MENU</h1>
+  </div>
+
+  <div class="meal-list">
+    <h1>Choose your favorite meal</h1>
+    <ul>
+      <li>
+        <div class="meal-item">
+          <img src="meals/burger-fries.webp" class="meal-image" alt="Burger & Fries" />
+          <div class="meal-info">
+            <span class="meal-name">Burger & Fries</span>
+            <span class="price">$7.99</span>
+          </div>
+        </div>
+      </li>
+      
+      <li>
+        <div class="meal-item">
+          <img src="meals/cheese-burger.webp" class="meal-image" alt="CheeseBurger" />
+          <div class="meal-info">
+            <span class="meal-name">Cheese Burger</span>
+            <span class="price">$4.99</span>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="meal-item">
+          <img src="meals/tuna.webp" class="meal-image" alt="Tuna" />
+          <div class="meal-info">
+            <span class="meal-name">Tuna</span>
+            <span class="price">$6.49</span>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="meal-item">
+          <img src="meals/egg-bacon.jpg" class="meal-image" alt="Egg and Bacon" />
+          <div class="meal-info">
+            <span class="meal-name">Egg & Bacon</span>
+            <span class="price">$6.99</span>
+            </div>
+            </div>
+        </li>     
+      </div>
+
+      
+  <div class="meal-list">
+    <ul>
+      <li>
+        <div class="meal-item">
+          <img src="meals/pizza.jpg" class="meal-image" alt="Pizza" />
+          <div class="meal-info">
+            <span class="meal-name">Pizza</span>
+            <span class="price">$5.99</span>
+          </div>
+        </div>
+      </li>
+      
+      <li>
+        <div class="meal-item">
+          <img src="meals/donut-tea.webp" class="meal-image" alt="Donut and Tea" />
+          <div class="meal-info">
+            <span class="meal-name">Donut & Tea</span>
+            <span class="price">$3.99</span>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="meal-item">
+          <img src="meals/chips-chicken.jpg" class="meal-image" alt="Chips and Chicken" />
+          <div class="meal-info">
+            <span class="meal-name">Chips & Chicken</span>
+            <span class="price">$8.49</span>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="meal-item">
+          <img src="meals/ugali-fish.jpg" class="meal-image" alt="Ugali  and Fish" />
+          <div class="meal-info">
+            <span class="meal-name">Ugali & Fish</span>
+            <span class="price">$6.99</span>
+            </div>
+            </div>
+        </li>     
+      </div>
+
+      <div class="meal-list">
+    <ul>
+      <li>
+        <div class="meal-item">
+          <img src="meals/Yogurt-bread.webp" class="meal-image" alt="Yogurt and Bread" />
+          <div class="meal-info">
+            <span class="meal-name">Yogurt & Bread</span>
+            <span class="price">$4.99</span>
+          </div>
+        </div>
+      </li>
+      
+      <li>
+        <div class="meal-item">
+          <img src="meals/chicken-feta.webp" class="meal-image" alt="Chicken Feta" />
+          <div class="meal-info">
+            <span class="meal-name">Chicken Feta</span>
+            <span class="price">$5.99</span>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="meal-item">
+          <img src="meals/ugali-fish2.webp" class="meal-image" alt="Ugali and Fish" />
+          <div class="meal-info">
+            <span class="meal-name">Fish & Ugali</span>
+            <span class="price">$6.49</span>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="meal-item">
+          <img src="meals/egg-bacon.jpg" class="meal-image" alt="Egg and Bacon" />
+          <div class="meal-info">
+            <span class="meal-name">Egg & Bacon</span>
+            <span class="price">$6.99</span>
+            </div>
+            </div>
+        </li>     
+      </div>
+ 
+</div>
+
+
+
+
+
+
+
+
+
+       
+</body>
+</html>
+
